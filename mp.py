@@ -14,11 +14,12 @@ json_data =requests.get(main_api).json()
 #print(e)
 fid=[]
 for i in range(902):
-  my_result = json_data['features'][i]['properties']['PARK_NAME']
-  fid.append(my_result)
-  #for i in fid:
+ my_result = json_data['features'][i]['properties']['PARK_NAME']
+ #my_result2=json_data.get['feature']  
+ fid.append(my_result)
+ #for i in fid:
   #print(i) 
-  a=set(fid)
+ a=set(fid)
   #print(type(a))
   #str1 = ''.join(a)
-  print(fid)
+ print(my_result)
