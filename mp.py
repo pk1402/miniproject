@@ -1,8 +1,24 @@
-#print ("test commit
+#print ("test commit")
 #sudo pip install requests
 import requests 
 main_api='https://opendata.arcgis.com/datasets/3df29a3d088a42d890f11d027ea1c0be_0.geojson'
-json_data =requests.get(main_api).json()
-formatted_address=json_data['features'][0]['properties']['park_name']
-print('formatted_address')
 
+json_data =requests.get(main_api).json()
+
+#x=json_data.get("features")
+#y =x[0]
+#x for i in range(902):
+#a  =" ".join(str(l) for l in x)
+#po = a.get("properties")
+#e = po.get("PARK_NAME")
+#print(e)
+fid=[]
+for i in range(902):
+  my_result = json_data['features'][i]['properties']['PARK_NAME']
+  fid.append(my_result)
+  #for i in fid:
+  #print(i) 
+  a=set(fid)
+  #print(type(a))
+  #str1 = ''.join(a)
+  print(fid)
