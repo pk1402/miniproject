@@ -13,13 +13,14 @@ json_data =requests.get(main_api).json()
 #e = po.get("PARK_NAME")
 #print(e)
 fid=[]
+cleanlist=[]
 for i in range(902):
  my_result = json_data['features'][i]['properties']['PARK_NAME']
  #my_result2=json_data.get['feature']  
  fid.append(my_result)
+ [cleanlist.append(x) for x in fid if x is not in cleanlist]
  #for i in fid:
   #print(i) 
- a=set(fid)
   #print(type(a))
   #str1 = ''.join(a)
  print(my_result)
