@@ -1,6 +1,7 @@
 #print ("test commit")
 #sudo pip install requests
-import requests 
+import requests
+import urllib.parse 
 main_api='https://opendata.arcgis.com/datasets/3df29a3d088a42d890f11d027ea1c0be_0.geojson'
 json_data =requests.get(main_api).json()
 
@@ -17,7 +18,7 @@ for i in range(902):
  my_result = json_data['features'][i]['properties']['PARK_NAME']
  #my_result2=json_data.get['feature']  
  fid.append(my_result)
-# [cleanlist.append(x) for x in fid if x is not in cleanlist]
+#[cleanlist.append(x) for x in fid if x is not in cleanlist]
  #for i in fid:
   #print(i) 
   #print(type(a))
