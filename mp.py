@@ -30,9 +30,10 @@ for parks in cleanlist:
     url2=second_api+urllib.parse.urlencode({'address':parks})
 
 json_data=requests.get(url2).json()
-formatted_address=json_data['results'][0]['geometry']['location']
-print(parks)
-
-        for k,v in formatted_address.items():
-
-            print(k,v)
+ try:
+    formatted_address=json_data['results'][0]['geometry']['location']
+    print(parks)
+    for k,v in formatted_address.items():
+    print(k,v)
+ except:
+    pass
