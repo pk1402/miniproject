@@ -18,12 +18,21 @@ for i in range(902):
  my_result = json_data['features'][i]['properties']['PARK_NAME']
  #my_result2=json_data.get['feature']  
  fid.append(my_result)
-#[cleanlist.append(x) for x in fid if x is not in cleanlist]
+[cleanlist.append(x) for x in fid if x is not in cleanlist]
  #for i in fid:
   #print(i) 
   #print(type(a))
   #str1 = ''.join(a)
  print(my_result)
 second_api='https://maps.google.com/maps/api/geocode/json?'
+for parks in cleanlist:
+
+    url2=second_api+urllib.parse.urlencode({'address':parks})
+
+json_data=requests.get(url2).json()
 formatted_address=json_data['results'][0]['geometry']['location']
-print(formatted_address)
+print(parks)
+
+        for k,v in formatted_address.items():
+
+            print(k,v)
