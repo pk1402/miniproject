@@ -2,7 +2,6 @@
 #sudo pip install requests
 import requests 
 main_api='https://opendata.arcgis.com/datasets/3df29a3d088a42d890f11d027ea1c0be_0.geojson'
-
 json_data =requests.get(main_api).json()
 
 #x=json_data.get("features")
@@ -18,9 +17,12 @@ for i in range(902):
  my_result = json_data['features'][i]['properties']['PARK_NAME']
  #my_result2=json_data.get['feature']  
  fid.append(my_result)
- [cleanlist.append(x) for x in fid if x is not in cleanlist]
+# [cleanlist.append(x) for x in fid if x is not in cleanlist]
  #for i in fid:
   #print(i) 
   #print(type(a))
   #str1 = ''.join(a)
  print(my_result)
+second_api='https://maps.google.com/maps/api/geocode/json?'
+formatted_address=json_data['results'][0]['geometry']['location']
+print(formatted_address)
